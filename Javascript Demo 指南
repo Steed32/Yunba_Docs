@@ -1,0 +1,68 @@
+使用简单—在几分钟内建立属于你自己的实时应用程序！
+
+在您的程序中调用我们为您提供的API，可以方便快捷地发送和监听事件。
+
+
+JavaScript SDK 使用指南
+1 获得属于自己的Appkey
+只需要三步就可以获得属于你自己的Appkey
+注册我们的云巴账号，并且创建一个应用。
+注意： 应用包名称应符合标准
+
+
+
+这里的
+Appkey 为5535ee987e353f5814e11163，到时候，用户只要替换自己的Appkey即可。
+
+
+上手操作
+调试工具
+注： 如果需要在浏览器内进行程序调试，Chrome浏览器自带JavaScript控制台，火狐浏览器Firefox需在附加组件中安装Firebug 插件。
+
+第一步：获取SDK
+下载SDK: 地址
+由于我们的JavaScript SDK是依赖于Socket.io. 所以第一步，我们应该与socket.io 服务器建立连接
+为什么要使用Socket.io
+socket.IO 是在 WebSocket 基础上开发的一种基于 HTTP 协议的常链接通讯方式，使用起来跟原生的 Socket 一样方便， 特别是在 Web App 开发中，使用得越来越多。
+
+与原生SDK的区别
+基于 Socket.io API 的 SDK 代码体积小，开发周期短，适合为小众语言快速开发 SDK。
+引入sdk
+1.<script type="text/javascript" src="yunba-1.0.1.js"></script>
+
+
+第二步：创建一个YUNBA实例并且初始化
+这时，就要引入我们刚刚获得Appkey
+连接服务器
+
+
+第三步： 使用Subscribe（） 
+
+
+第四步：发布
+
+
+
+
+
+
+
+使用Chrome浏览器打开
+界面如下图所示，已经成功连接上Socket以及服务器。使用浏览器自带的JavaScript控制台。
+我们发现console显示:
+js client start init...
+js client init success.
+
+订阅一个频道
+在Subscribe&Unsubscribe一栏输入频道的名字，例如“Yunba”，点击Subscribe， 那么频道“Yunba”就订阅成功并且出现在下方“已订阅频道”的列表中。
+发布消息
+在下面一栏按频道发布，在频道一栏中输入我们刚刚订阅的“Yunba”， 紧接着在消息一栏中输入你想发布的消息，例如“Hello,World”点击Publish 按钮，这时你会发现，上一栏多出收到消息一栏中，会多出“”，这就表明我们的消息“Hello,World”通过频道“Yunba”成功发布。
+
+
+
+
+
+1 在你的代码中导入我们的JavaScript SDK
+2 利用提供的key 进行初始化
+3 可选择性地，订阅一个频道并开始接收消息
+4 在频道发布一个消息，
